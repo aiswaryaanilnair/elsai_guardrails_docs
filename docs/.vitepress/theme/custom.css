@@ -1,0 +1,14 @@
+/* Increase hero image size */
+.VPImage.image-src {
+  max-width: 800px !important;
+  width: 800px !important;
+}
+
+.VPHero .image {
+  max-width: 800px !important;
+}
+
+.VPHero .image-container {
+  max-width: 800px !important;
+}
+
