@@ -8,7 +8,7 @@ Use `generate_async()` for asynchronous LLM generation with guardrails:
 
 ```python
 import asyncio
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 async def main():
     yaml_content = """
@@ -115,7 +115,7 @@ asyncio.run(generate_safe())
 
 ```python
 from fastapi import FastAPI
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 app = FastAPI()
 

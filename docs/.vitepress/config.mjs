@@ -5,7 +5,7 @@ export default defineConfig({
   description: 'Programmable guardrails for LLM-based applications',
   
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/elsai.png',
     siteTitle: false,
     
     nav: [
@@ -83,7 +83,6 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Architecture', link: '/reference/architecture' },
-            { text: 'Glossary', link: '/reference/glossary' },
             { text: 'FAQ', link: '/reference/faq' }
           ]
         }

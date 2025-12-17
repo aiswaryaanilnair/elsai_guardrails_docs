@@ -33,7 +33,7 @@ guardrails:
 Toxicity detection is automatic when enabled:
 
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 yaml_content = """
 llm:
@@ -64,7 +64,7 @@ if result.get('input_check'):
 ### Standalone Check
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 config = GuardrailConfig(
     check_toxicity=True,
@@ -74,7 +74,7 @@ config = GuardrailConfig(
 guardrail = GuardrailSystem(config=config)
 
 result = guardrail.check_text("test message")
-print(f"Toxicity: {result.toxicity}")
+print(f"Toxicity detected: {result.passed}")
 ```
 
 ## Result Format
@@ -107,8 +107,6 @@ guardrails:
 
 ```python
 result = guardrail.check_text("Hello, how are you?")
-print(result.toxicity)
-# {'label': 'non-toxic', 'confidence': 0.1}
 print(result.passed)  # True
 ```
 
@@ -116,19 +114,8 @@ print(result.passed)  # True
 
 ```python
 result = guardrail.check_text("offensive content here")
-print(result.toxicity)
-# {'label': 'toxic', 'confidence': 0.85}
 print(result.passed)  # False
 print(result.message)  # "Toxic content detected."
-```
-
-### Offensive Content
-
-```python
-result = guardrail.check_text("mildly offensive content")
-print(result.toxicity)
-# {'label': 'offensive', 'confidence': 0.75}
-print(result.passed)  # False (if threshold < 0.75)
 ```
 
 ## Best Practices

@@ -19,7 +19,7 @@ guardrails:
   # Check types
   check_toxicity: true          # Enable toxicity detection
   check_sensitive_data: true    # Enable sensitive data detection
-  check_semantic: true          # Enable semantic classification
+  check_semantic: true          # Enable content classification
   
   # Toxicity settings
   toxicity_threshold: 0.7       # Threshold for blocking (0.0-1.0)
@@ -140,7 +140,7 @@ guardrails:
 ### Loading from File
 
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 config = RailsConfig.from_content(config_path="config.yml")
 rails = LLMRails(config=config)
@@ -149,7 +149,7 @@ rails = LLMRails(config=config)
 ### Loading from String
 
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 yaml_content = """
 llm:

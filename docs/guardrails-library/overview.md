@@ -54,7 +54,7 @@ Configuration for guardrail behavior and thresholds.
 ## Quick Example
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 # Create guardrail system
 config = GuardrailConfig(
@@ -67,7 +67,6 @@ guardrail = GuardrailSystem(config=config)
 # Check text
 result = guardrail.check_text("Hello, this is a test")
 print(f"Passed: {result.passed}")
-print(f"Content Class: {result.semantic_class}")
 ```
 
 ## Next Steps

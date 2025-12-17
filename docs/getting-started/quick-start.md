@@ -7,7 +7,7 @@ Get up and running with Elsai Guardrails in minutes.
 ### Step 1: Import Required Modules
 
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 ```
 
 ### Step 2: Define Configuration
@@ -57,7 +57,7 @@ print(result)
 ## Complete Example
 
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 # Configuration
 yaml_content = """
@@ -111,7 +111,7 @@ guardrails:
 
 **Python code:**
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 config = RailsConfig.from_content(config_path="config.yml")
 rails = LLMRails(config=config)

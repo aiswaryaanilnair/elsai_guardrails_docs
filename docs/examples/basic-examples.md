@@ -5,7 +5,7 @@ Simple examples to get started with Elsai Guardrails.
 ## Example 1: Basic Generation
 
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 yaml_content = """
 llm:
@@ -47,7 +47,7 @@ guardrails:
 
 **Python:**
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 config = RailsConfig.from_content(config_path="config.yml")
 rails = LLMRails(config=config)
@@ -60,7 +60,7 @@ response = rails.generate(
 ## Example 3: Detailed Results
 
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 yaml_content = """
 llm:
@@ -100,7 +100,7 @@ if result.get('input_check'):
 ## Example 4: Input Validation Only
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 config = GuardrailConfig(
     check_toxicity=True,
@@ -121,7 +121,7 @@ print(f"Sensitive Data: {result.sensitive_data.get('predicted_labels', [])}")
 ## Example 5: Output Validation Only
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 config = GuardrailConfig()
 guardrail = GuardrailSystem(config=config)
@@ -137,7 +137,7 @@ print(f"Message: {result.message}")
 ## Example 6: Conversation with Multiple Messages
 
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 yaml_content = """
 llm:
@@ -167,7 +167,7 @@ print(response)
 
 ```python
 import asyncio
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 async def main():
     yaml_content = """

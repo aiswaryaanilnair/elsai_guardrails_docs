@@ -35,7 +35,7 @@ guardrails:
 Output checks are automatic when `output_checks: true`:
 
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 yaml_content = """
 llm:
@@ -66,7 +66,7 @@ if result.get('output_check'):
 ### Standalone Output Validation
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 config = GuardrailConfig(
     check_toxicity=True,
@@ -93,7 +93,7 @@ Output can be blocked for:
 ## Example
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 config = GuardrailConfig()
 guardrail = GuardrailSystem(config=config)

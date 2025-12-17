@@ -10,9 +10,6 @@ hero:
     alt: Elsai Guardrails Architecture
   actions:
     - theme: brand
-      text: Get Started
-      link: /getting-started/installation
-    - theme: alt
       text: View Documentation
       link: /getting-started/quick-start
 
@@ -46,7 +43,7 @@ Elsai Guardrails provides a comprehensive solution for securing your LLM-based a
 ### Quick Example
 
 ```python
-from guardrails import LLMRails
+from elsai_guardrails.guardrails import LLMRails
 
 # Initialize with configuration
 rails = LLMRails.from_config("config.yml")

@@ -14,7 +14,7 @@ The `GuardrailSystem` class provides core guardrail functionality for validating
 ### Basic Initialization
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 config = GuardrailConfig()
 guardrail = GuardrailSystem(config=config)
@@ -70,7 +70,7 @@ result = guardrail.check_input("user input text")
 
 **Example - Separate Input Check:**
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 # Create guardrail system (no LLM needed for separate checks)
 guardrail = GuardrailSystem.from_config("config.yml")
@@ -130,7 +130,7 @@ print(llm_response)
 ### Basic Text Check
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 config = GuardrailConfig(
     check_toxicity=True,
@@ -152,7 +152,7 @@ else:
 This pattern gives you full control over the LLM call while still having guardrails:
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 # Create guardrail system (no LLM needed)
 guardrail = GuardrailSystem.from_config("config.yml")

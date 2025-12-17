@@ -7,7 +7,7 @@ Common patterns and use cases for the Elsai Guardrails Python API.
 The most common use case: generate LLM responses with automatic guardrails.
 
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 # Configuration
 yaml_content = """
@@ -53,7 +53,7 @@ guardrails:
 
 **Python:**
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 config = RailsConfig.from_content(config_path="config.yml")
 rails = LLMRails(config=config)
@@ -107,7 +107,7 @@ else:
 Validate user input without LLM generation:
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 config = GuardrailConfig(
     check_toxicity=True,
@@ -145,7 +145,7 @@ if not result.passed:
 Create configuration programmatically:
 
 ```python
-from guardrails import LLMRails, RailsConfig, GuardrailConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig, GuardrailConfig
 
 guardrail_config = GuardrailConfig(
     check_toxicity=True,

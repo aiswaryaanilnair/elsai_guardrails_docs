@@ -133,7 +133,7 @@ guardrails:
 ### From YAML String
 
 ```python
-from guardrails import RailsConfig
+from elsai_guardrails.guardrails import RailsConfig
 
 yaml_content = """
 llm:
@@ -160,7 +160,7 @@ config = RailsConfig.from_content(config_path="config.yml")
 You can also create configuration programmatically:
 
 ```python
-from guardrails import RailsConfig, GuardrailConfig
+from elsai_guardrails.guardrails import RailsConfig, GuardrailConfig
 
 guardrail_config = GuardrailConfig(
     check_toxicity=True,

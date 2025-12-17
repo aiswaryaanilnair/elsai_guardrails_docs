@@ -7,7 +7,7 @@ Advanced patterns and techniques for using Elsai Guardrails.
 Integrate with custom LLM functions:
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 def custom_llm(messages):
     # Your custom LLM implementation
@@ -38,7 +38,7 @@ if input_result.passed:
 Enable/disable checks based on conditions:
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 # Strict mode for production
 production_config = GuardrailConfig(
@@ -72,7 +72,7 @@ guardrail = GuardrailSystem(config=config)
 Process multiple inputs:
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 config = GuardrailConfig()
 guardrail = GuardrailSystem(config=config)
@@ -102,7 +102,7 @@ Add logging for guardrail checks:
 
 ```python
 import logging
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -115,9 +115,6 @@ def check_with_logging(text):
     
     logger.info(f"Text: {text[:50]}...")
     logger.info(f"Passed: {result.passed}")
-    logger.info(f"Toxicity: {result.toxicity.get('label', 'N/A')}")
-    logger.info(f"Sensitive: {result.sensitive_data.get('predicted_labels', [])}")
-    logger.info(f"Semantic: {result.semantic_class}")
     
     return result
 
@@ -129,7 +126,7 @@ result = check_with_logging("test input")
 Customize block messages by wrapping the guardrail:
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 class CustomGuardrail(GuardrailSystem):
     def check_input(self, user_input: str):
@@ -156,7 +153,7 @@ guardrail = CustomGuardrail(config=config)
 
 ```python
 from flask import Flask, request, jsonify
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 app = Flask(__name__)
 
@@ -190,7 +187,7 @@ def chat():
 ```python
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 from typing import List, Dict
 
 app = FastAPI()

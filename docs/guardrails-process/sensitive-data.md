@@ -34,7 +34,7 @@ guardrails:
 Sensitive data detection is automatic when enabled:
 
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 yaml_content = """
 llm:
@@ -63,7 +63,7 @@ if result.get('input_check'):
 ### Standalone Check
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 config = GuardrailConfig(
     check_sensitive_data=True,
@@ -72,7 +72,7 @@ config = GuardrailConfig(
 guardrail = GuardrailSystem(config=config)
 
 result = guardrail.check_text("My email is user@example.com")
-print(f"Sensitive Data: {result.sensitive_data}")
+print(f"Safe to return: {result.passed}")
 ```
 
 ## Result Format
@@ -108,8 +108,6 @@ Common sensitive data types include:
 
 ```python
 result = guardrail.check_text("Hello, how are you?")
-print(result.sensitive_data)
-# {'predicted_labels': ['No sensitive data detected']}
 print(result.passed)  # True
 ```
 
@@ -117,8 +115,6 @@ print(result.passed)  # True
 
 ```python
 result = guardrail.check_text("My email is user@example.com")
-print(result.sensitive_data)
-# {'predicted_labels': ['Email']}
 print(result.passed)  # False
 print(result.message)  # "Sensitive data detected."
 ```
@@ -127,8 +123,6 @@ print(result.message)  # "Sensitive data detected."
 
 ```python
 result = guardrail.check_text("Email: user@example.com, Phone: 555-1234")
-print(result.sensitive_data)
-# {'predicted_labels': ['Email', 'Phone']}
 print(result.passed)  # False
 ```
 

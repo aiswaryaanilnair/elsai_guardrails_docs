@@ -5,7 +5,7 @@ Advanced examples demonstrating complex use cases.
 ## Example 1: Custom Block Messages
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 class CustomGuardrail(GuardrailSystem):
     def check_input(self, user_input: str):
@@ -28,7 +28,7 @@ guardrail = CustomGuardrail(config=config)
 ## Example 2: Batch Processing
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 config = GuardrailConfig()
 guardrail = GuardrailSystem(config=config)
@@ -61,7 +61,7 @@ for r in results:
 
 ```python
 import os
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 # Production: strict
 production_config = GuardrailConfig(
@@ -93,7 +93,7 @@ guardrail = GuardrailSystem(config=config)
 
 ```python
 import logging
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -106,9 +106,6 @@ def check_with_logging(text):
     
     logger.info(f"Text: {text[:50]}...")
     logger.info(f"Passed: {result.passed}")
-    logger.info(f"Toxicity: {result.toxicity.get('label', 'N/A')}")
-    logger.info(f"Sensitive: {result.sensitive_data.get('predicted_labels', [])}")
-    logger.info(f"Semantic: {result.semantic_class}")
     
     return result
 
@@ -119,7 +116,7 @@ result = check_with_logging("test input")
 
 ```python
 import asyncio
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 async def process_multiple():
     yaml_content = """
@@ -154,7 +151,7 @@ asyncio.run(process_multiple())
 ## Example 6: Error Handling
 
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 def safe_generate(rails, messages):
     try:
@@ -187,7 +184,7 @@ print(result)
 ## Example 7: Custom LLM Wrapper
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 def custom_llm_with_guardrails(messages, guardrail):
     # Check input

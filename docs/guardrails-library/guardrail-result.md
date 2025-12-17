@@ -81,7 +81,7 @@ print(result.message)
 ### Basic Check
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 config = GuardrailConfig()
 guardrail = GuardrailSystem(config=config)
@@ -95,7 +95,7 @@ print(f"Message: {result.message}")
 ### Detailed Analysis
 
 ```python
-result = guardrail.check_text("test input")
+result = guardrail.check_input("test input")
 
 # Check overall result
 if not result.passed:
@@ -122,7 +122,7 @@ if not result.passed:
 ### From LLMRails
 
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 config = RailsConfig.from_content(yaml_content=yaml_content)
 rails = LLMRails(config=config)

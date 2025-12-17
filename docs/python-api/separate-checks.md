@@ -23,7 +23,7 @@ The basic pattern is:
 ## Example 1: Basic Separate Checks
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 # Create guardrail system (no LLM needed)
 guardrail = GuardrailSystem.from_config("config.yml")
@@ -57,7 +57,7 @@ print(f"Safe response: {llm_response}")
 ## Example 2: With OpenAI
 
 ```python
-from guardrails import GuardrailSystem
+from elsai_guardrails.guardrails import GuardrailSystem
 from openai import OpenAI
 
 # Initialize guardrail and LLM
@@ -96,7 +96,7 @@ print(llm_response)
 ## Example 3: Complete Workflow Function
 
 ```python
-from guardrails import GuardrailSystem
+from elsai_guardrails.guardrails import GuardrailSystem
 
 guardrail = GuardrailSystem.from_config("config.yml")
 
@@ -153,7 +153,7 @@ else:
 ## Example 4: Getting Detailed Results
 
 ```python
-from guardrails import GuardrailSystem
+from elsai_guardrails.guardrails import GuardrailSystem
 
 guardrail = GuardrailSystem.from_config("config.yml")
 
@@ -171,15 +171,15 @@ print(f"  Labels: {input_result.sensitive_data.get('predicted_labels', [])}")
 print(f"\nContent Class: {input_result.semantic_class}")
 
 if input_result.passed:
-    print("\n✅ Input is safe to send to LLM")
+    print("\nInput is safe to send to LLM")
 else:
-    print("\n❌ Input should be blocked")
+    print("\nInput should be blocked")
 ```
 
 ## Example 5: Handling Blocked Input
 
 ```python
-from guardrails import GuardrailSystem
+from elsai_guardrails.guardrails import GuardrailSystem
 
 guardrail = GuardrailSystem.from_config("config.yml")
 
@@ -207,7 +207,7 @@ if not input_result.passed:
 ## Example 6: Handling Blocked Output
 
 ```python
-from guardrails import GuardrailSystem
+from elsai_guardrails.guardrails import GuardrailSystem
 
 guardrail = GuardrailSystem.from_config("config.yml")
 
@@ -237,7 +237,7 @@ print(llm_response)
 ## Example 7: Custom Configuration
 
 ```python
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 # Create custom guardrail config
 custom_config = GuardrailConfig(

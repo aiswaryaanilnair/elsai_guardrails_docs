@@ -6,7 +6,7 @@ Examples of integrating Elsai Guardrails with popular frameworks.
 
 ```python
 from flask import Flask, request, jsonify
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 app = Flask(__name__)
 
@@ -50,7 +50,7 @@ if __name__ == '__main__':
 ```python
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 from typing import List, Dict
 
 app = FastAPI()
@@ -100,7 +100,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 import json
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 # Initialize rails (in views.py or separate module)
 config = RailsConfig.from_content(config_path="config.yml")
@@ -139,7 +139,7 @@ def chat_view(request):
 
 ```python
 import streamlit as st
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 # Initialize rails
 @st.cache_resource
@@ -193,7 +193,7 @@ if prompt := st.chat_input("What is up?"):
 ```python
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
-from guardrails import GuardrailSystem, GuardrailConfig
+from elsai_guardrails.guardrails import GuardrailSystem, GuardrailConfig
 
 # Create guardrail system
 guardrail_config = GuardrailConfig()

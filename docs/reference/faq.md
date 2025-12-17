@@ -102,9 +102,3 @@ Yes, see [Integration Examples](../examples/integration-examples.md).
 
 Yes, you can wrap LangChain chains with guardrails. See [Integration Examples](../examples/integration-examples.md).
 
-## Next Steps
-
-- [Getting Started](../getting-started/quick-start.md) - Quick start guide
-- [Configuration Guide](../configuration/overview.md) - Configuration options
-- [Examples](../examples/basic-examples.md) - Usage examples
-

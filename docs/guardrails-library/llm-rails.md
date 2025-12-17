@@ -16,7 +16,7 @@ The `LLMRails` class provides a high-level interface that combines LLM generatio
 ### From RailsConfig
 
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 yaml_content = """
 llm:
@@ -139,7 +139,7 @@ When `return_details=True`, the result is a dictionary with:
 ### Basic Generation
 
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 yaml_content = """
 llm:
@@ -199,7 +199,7 @@ else:
 
 ```python
 import asyncio
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 async def main():
     config = RailsConfig.from_content(yaml_content=yaml_content)

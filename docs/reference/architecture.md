@@ -102,6 +102,5 @@ Flexible configuration through:
 
 ## Next Steps
 
-- [Glossary](glossary.md) - Terminology
 - [FAQ](faq.md) - Common questions
 

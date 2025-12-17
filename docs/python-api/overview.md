@@ -5,7 +5,7 @@ The Elsai Guardrails Python API provides a simple and powerful interface for add
 ## Quick Start
 
 ```python
-from guardrails import LLMRails, RailsConfig
+from elsai_guardrails.guardrails import LLMRails, RailsConfig
 
 # Configure
 yaml_content = """
